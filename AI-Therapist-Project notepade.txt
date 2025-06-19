@@ -1,0 +1,17 @@
+/AI-Therapist-Project
+├── unity-client/                 ← Unity Project folder
+│   └── Assets/
+│       └── Scripts/
+│           └── AIConnector.cs    ← Unity to Flask communicator
+│       └── Resources/
+│           └── Your character prefab
+│       └── Scenes/
+│           └── Main.unity
+│       └── Audio/
+│           └── (Audio plays here)
+├── flask-server/                ← Python Flask API
+│   ├── app.py                   ← Flask server (handles input + AI)
+│   ├── ai_module.py             ← Generates AI replies (DeepSeek or OpenAI)
+│   ├── tts_module.py            ← Text to Speech audio file
+│   └── static/
+│       └── output.wav           ← Saved audio for Unity
