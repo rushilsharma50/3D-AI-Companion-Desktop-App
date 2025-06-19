@@ -42,3 +42,12 @@ MemoryCaptures/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Ignore Unity auto-backup files
+*.bak
+*.tmp
+
+# Ignore Rider and VSCode settings (if you use them)
+.idea/
+.vscode/
+
