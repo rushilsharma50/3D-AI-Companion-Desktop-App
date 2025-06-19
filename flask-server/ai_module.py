@@ -8,7 +8,7 @@ def get_ai_reply(user_input):
     }
 
     data = {
-        "model": "Deepseek R1 0528 Qwen3 8B",
+        "model": "deepseek/deepseek-r1-0528-qwen3-8b:free",  # ✅ make sure this is valid!
         "messages": [
             {"role": "system", "content": "You are a kind and calm therapist who helps users explore their emotions."},
             {"role": "user", "content": user_input}
@@ -16,4 +16,14 @@ def get_ai_reply(user_input):
     }
 
     response = requests.post("https://openrouter.ai/api/v1/chat/completions", headers=headers, json=data)
-    return response.json()['choices'][0]['message']['content']
+
+    try:
+        result = response.json()
+        if "choices" in result:
+            return result['choices'][0]['message']['content']
+        else:
+            print("❌ API Error: ", result)
+            return "Sorry, I'm having trouble thinking right now."
+    except Exception as e:
+        print("❌ Exception while parsing AI response:", e)
+        return "Something went wrong with the AI model."

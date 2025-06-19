@@ -7,6 +7,15 @@ public class AIConnector : MonoBehaviour
     public AudioSource audioSource;
     public string apiUrl = "http://localhost:5000/talk";
 
+    void Update()
+{
+    if (Input.GetKeyDown(KeyCode.Space))
+    {
+        SendToAI("I feel tired today");
+    }
+}
+
+
     public void SendToAI(string message)
     {
         StartCoroutine(SendMessageRoutine(message));
