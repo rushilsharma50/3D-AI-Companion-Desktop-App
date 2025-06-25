@@ -14,6 +14,22 @@ venv/
 *.token
 *.cache/
 
+# Ignore virtual environments
+ai-env/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore audio and logs
+*.wav
+*.log
+
+
 # === UNITY ===
 [Ll]ibrary/
 [Tt]emp/
