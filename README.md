@@ -1,60 +1,64 @@
-# 3D-AI-Companion-Desktop-App
- Voice-to-Voice 3D-AI-Companion-Desktop-App using Python & Unity
-
-# 🤖 Project Title (e.g., Unity AI Desktop Companion)
+# 🤖 Project: Aura - Your AI Desktop Companion
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-YourName-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/your-linkedin-url/)
 [![GitHub](https://img.shields.io/badge/GitHub-YourUsername-lightgrey?style=for-the-badge&logo=github)](https://github.com/your-username)
+![Python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge&logo=python)
+![Unity](https://img.shields.io/badge/Unity-2022.3-black.svg?style=for-the-badge&logo=unity)
+![Flask](https://img.shields.io/badge/Flask-black?style=for-the-badge&logo=flask)
 
-> A one-sentence pitch for your project.
-> Example: An emotionally intelligent 3D AI companion for your desktop, built with Unity and Python, designed for natural, voice-based interaction.
 
-![A GIF showing your project in action](link-to-your-gif-or-screenshot.gif)
+> An emotionally intelligent 3D AI companion that lives on your desktop, offering natural voice-based conversation and perspective, powered by a local Python backend.
+
+![Aura AI Desktop Companion in Action](https://github.com/your-username/your-repo-name/blob/main/docs/demo.gif)
 ---
 
 ## 🎯 About The Project
 
-A recruiter will spend about 10-15 seconds here. Explain the **what** and the **why**. What problem does it solve? What was your motivation? This is your project's story.
+Traditional AI assistants are confined to a window or a smart speaker, feeling more like a utility than a companion. They often lack personality and require an internet connection, raising privacy concerns.
 
-* **Problem:** Standard AI assistants feel robotic and lack personality. They operate in a separate window, feeling disconnected from the user's workspace.
-* **Solution:** This project creates a lightweight, non-intrusive 3D desktop overlay character that provides emotionally aware responses and useful information. It's designed to be a friend, not just a tool.
-* **Key Learnings:** This was a great opportunity to learn about integrating a game engine (Unity) with a powerful backend (Flask/Python) and explore the challenges of real-time, low-latency AI interaction using local models.
+**Project: Aura** is my attempt to solve this. It's a lightweight, non-intrusive 3D character that exists as a desktop overlay, providing companionship and assistance without getting in the way. The entire AI pipeline, from voice recognition to response generation, runs locally, ensuring privacy and offline functionality.
+
+This project was built to explore the technical challenges of integrating a real-time 3D application (Unity) with a powerful and flexible AI backend (Python/Flask), with a focus on creating a believable, emotionally aware character.
 
 ---
 
 ## ✨ Key Features
 
-Use this section to list the most impressive functionalities. Think in terms of results, not just code.
-
-* **Real-time Voice Interaction:** Utilizes local Speech-to-Text (STT) and expressive Text-to-Speech (TTS) for offline, private conversations.
-* **3D Animated Character:** A fully animated character that reacts based on the conversation's emotional tone.
-* **Desktop Overlay:** Renders as a lightweight overlay on the desktop, accessible at all times without interrupting workflow.
-* **Python/Flask Backend:** Handles all AI processing, ensuring the Unity frontend remains responsive and performant.
+* **Real-time, Offline Voice Conversation:** Utilizes local, high-performance Speech-to-Text (Whisper) and expressive Text-to-Speech (Edge-TTS) for natural, private conversations.
+* **Expressive 3D Animated Character:** Features a fully animated 3D character (Scifi Girl v.01) that uses context-aware animations to convey emotion and react to the conversation.
+* **Seamless Desktop Overlay:** Renders as a transparent, click-through window that sits on your desktop, making the character feel truly integrated with your workspace.
+* **Powerful Python & Flask Backend:** All heavy AI processing is offloaded to a local Flask server, keeping the Unity frontend lightweight and responsive.
+* **Modular and Extensible:** The architecture is designed to be easily extendable, with plans for adding new skills, memories, and integrations.
 
 ---
 
 ## 🛠️ Tech Stack & Tools
 
-This is a critical section for recruiters and automated resume scanners. Be specific.
+This project brings together a variety of technologies to create a cohesive experience:
 
 * **Frontend:** Unity, C#
 * **Backend:** Python, Flask
-* **AI/ML:** Local Whisper (STT), Edge-TTS (or other), NLP Libraries (e.g., SpaCy/NLTK for intent recognition)
-* **3D Modeling/Animation:** Blender
-* **Database:** (If any, e.g., SQLite for memory)
+* **AI / Machine Learning:**
+    * **Speech-to-Text (STT):** Local Whisper model implementation.
+    * **Text-to-Speech (TTS):** Microsoft's Edge-TTS for natural and expressive voices.
+    * **Natural Language Processing (NLP):** [Specify library, e.g., SpaCy for intent recognition or NLTK for text processing]
+* **3D Assets & Animation:** Blender (for animation rigging/cleanup), Sketchfab (for the base model).
 * **Platform:** Windows Desktop
 
 ---
 
 ## 🚀 Getting Started
 
-Show that you can write documentation. Prove that your project actually works and that someone else can run it.
+To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
 
-List any software or libraries someone needs to install before they can run your code.
+* Unity Hub with Unity Editor version `2022.3.x` or later.
+* Python `3.10` or later.
+* Git for cloning the repository.
 
-```bash
-# Example
-pip install -r requirements.txt
-# Make sure you have Unity version 202X.X.X installed.
+### Installation
+
+1.  **Clone the Repository:**
+    ```bash
+    git clone
