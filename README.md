@@ -1,7 +1,7 @@
 # 🤖 Project: Arora - Your AI Desktop Companion
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-YourName-blue?style=for-the-badge&logo=linkedin)]([https://www.linkedin.com/in/your-linkedin-url/](https://www.linkedin.com/in/rushilkumar-sharma-0679b9305/))
-[![GitHub](https://img.shields.io/badge/GitHub-YourUsername-lightgrey?style=for-the-badge&logo=github)](https://github.com/rushilsharma50)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-RushilSharma-blue?style=for-the-badge&logo=linkedin)]([https://www.linkedin.com/in/your-linkedin-url/](https://www.linkedin.com/in/rushilkumar-sharma-0679b9305/))
+[![GitHub](https://img.shields.io/badge/GitHub-rushilsharma50-lightgrey?style=for-the-badge&logo=github)](https://github.com/rushilsharma50)
 ![Python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge&logo=python)
 ![Unity](https://img.shields.io/badge/Unity-2022.3-black.svg?style=for-the-badge&logo=unity)
 ![Flask](https://img.shields.io/badge/Flask-black?style=for-the-badge&logo=flask)
