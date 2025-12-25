@@ -1,39 +1,38 @@
 import os
-import webbrowser
-import datetime
-import shutil # <--- ADD THIS IMPORT
+import requests
 
-def handle_open_app(app_name):
-    """Opens an application using a secure whitelist and shutil.which to find it."""
-    app_map = {
-        "notepad": "notepad.exe",
-        "calculator": "calc.exe",
-        "chrome": "chrome.exe" # We can simplify this now
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+
+OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+
+def call_llm(system_prompt: str, user_text: str) -> str:
+    if not OPENROUTER_API_KEY:
+        raise RuntimeError("OPENROUTER_API_KEY not set")
+
+    headers = {
+        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+        "Content-Type": "application/json",
+        "HTTP-Referer": "http://localhost",
+        "X-Title": "AURA Desktop AI"
     }
-    
-    simple_name = app_map.get(app_name.lower())
-    
-    if not simple_name:
-        return f"Sorry, I don't know how to open '{app_name}'."
 
-    # Use shutil.which() to find the full path of the program
-    full_path = shutil.which(simple_name)
+    payload = {
+        "model": "openai/gpt-4o-mini",
+        "messages": [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_text}
+        ],
+        "temperature": 0.7,
+        "max_tokens": 120
+    }
 
-    if full_path:
-        os.startfile(full_path)
-        return f"Okay, opening {app_name}."
-    else:
-        # This message now means the program truly isn't found or installed
-        return f"I know what {app_name} is, but I can't find it on your system."
+    r = requests.post(
+        OPENROUTER_URL,
+        headers=headers,
+        json=payload,
+        timeout=60
+    )
 
-def handle_web_search(query):
-    """Opens the default web browser and searches Google."""
-    url = f"https://www.google.com/search?q={query}"
-    webbrowser.open(url)
-    return f"Here are the search results for '{query}'."
+    r.raise_for_status()
 
-def handle_get_time():
-    """Returns the current time."""
-    now = datetime.datetime.now()
-    # It is currently 2:42 PM on Thursday
-    return f"The current time is {now.strftime('%I:%M %p')}."
+    return r.json()["choices"][0]["message"]["content"]
