@@ -1,49 +1,69 @@
-# 🤖 Project: Arora - Your AI Desktop Companion
+# 🧠 AURA - Desktop AI Companion
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-RushilSharma-blue?style=for-the-badge&logo=linkedin)]([https://www.linkedin.com/in/your-linkedin-url/](https://www.linkedin.com/in/rushilkumar-sharma-0679b9305/))
-[![GitHub](https://img.shields.io/badge/GitHub-rushilsharma50-lightgrey?style=for-the-badge&logo=github)](https://github.com/rushilsharma50)
-![Python](https://img.shields.io/badge/Python-3.10-blue.svg?style=for-the-badge&logo=python)
-![Unity](https://img.shields.io/badge/Unity-2022.3-black.svg?style=for-the-badge&logo=unity)
-![Flask](https://img.shields.io/badge/Flask-black?style=for-the-badge&logo=flask)
+![Unity](https://img.shields.io/badge/Unity-2022.3%2B-black?style=for-the-badge&logo=unity)
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-Backend-000000?style=for-the-badge&logo=flask&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Prototype-orange?style=for-the-badge)
 
-
-> An emotionally intelligent 3D AI companion that lives on your desktop, offering natural voice-based conversation and perspective, powered by a local Python backend.
-
-![Arora AI Desktop Companion in Action](https://github.com/your-username/your-repo-name/blob/main/docs/demo.gif)
----
-
-## 🎯 About The Project
-
-Traditional AI assistants are confined to a window or a smart speaker, feeling more like a utility than a companion. They often lack personality and require an internet connection, raising privacy concerns.
-
-**Project: Arora** is my attempt to solve this. It's a lightweight, non-intrusive 3D character that exists as a desktop overlay, providing companionship and assistance without getting in the way. The entire AI pipeline, from voice recognition to response generation, runs locally, ensuring privacy and offline functionality.
-
-This project was built to explore the technical challenges of integrating a real-time 3D application (Unity) with a powerful and flexible AI backend (Python/Flask), with a focus on creating a believable, emotionally aware character.
+> **AURA** is a desktop companion application designed to bridge the gap between static chatbots and emotionally intelligent digital presence. It combines a **Unity-based 3D interface** with a decoupled **Flask AI backend** to create a lightweight, voice-interactive character that lives on your desktop.
 
 ---
 
 ## ✨ Key Features
 
-* **Real-time, Offline Voice Conversation:** Utilizes local, high-performance Speech-to-Text (Whisper) and expressive Text-to-Speech (Edge-TTS) for natural, private conversations.
-* **Expressive 3D Animated Character:** Features a fully animated 3D character (Scifi Girl v.01) that uses context-aware animations to convey emotion and react to the conversation.
-* **Seamless Desktop Overlay:** Renders as a transparent, click-through window that sits on your desktop, making the character feel truly integrated with your workspace.
-* **Powerful Python & Flask Backend:** All heavy AI processing is offloaded to a local Flask server, keeping the Unity frontend lightweight and responsive.
-* **Modular and Extensible:** The architecture is designed to be easily extendable, with plans for adding new skills, memories, and integrations.
+- **🎙️ Real-time Voice Interaction:** Speak naturally using microphone input; the system handles STT (Whisper) and TTS (Piper) locally or via API.
+- **Iy 3D Desktop Overlay:** A non-intrusive 3D character (Unity URP) that sits on your screen, capable of idle animations and lip-syncing.
+- **🧠 Decoupled Architecture:** Heavy AI processing (LLM, Audio generation) is offloaded to a Python Flask server, keeping the Unity client buttery smooth.
+- **🎭 Multi-Persona Support:** Switch between different personality prompts (Friend, Assistant, Stoic) dynamically.
+- **🔒 Privacy-Focused Design:** Prioritizes local execution for TTS and STT to minimize data leakage and latency.
 
 ---
 
-## 🛠️ Tech Stack & Tools
+## 🏗️ Architecture
 
-This project brings together a variety of technologies to create a cohesive experience:
+The system follows a **Client-Server** model to ensure performance:
 
-* **Frontend:** Unity, C#
-* **Backend:** Python, Flask
-* **AI / Machine Learning:**
-    * **Speech-to-Text (STT):** Local Whisper model implementation.
-    * **Text-to-Speech (TTS):** Microsoft's Edge-TTS for natural and expressive voices.
-    * **Natural Language Processing (NLP):** [Specify library, e.g., SpaCy for intent recognition or NLTK for text processing]
-* **3D Assets & Animation:** Blender (for animation rigging/cleanup), Sketchfab (for the base model).
-* **Platform:** Windows Desktop
+```mermaid
+graph LR
+    A[User Voice] -->|Mic Input| B(Unity Client)
+    B -->|WAV + Persona Data| C{Flask Backend}
+    C -->|Whisper| D[STT]
+    D -->|Text| E[LLM / OpenRouter]
+    E -->|Reply Text| F[Piper TTS]
+    F -->|Audio URL| B
+    B -->|Playback & Animation| G[User Output]
 
----
+Tech Stack
+Component,Technology,Purpose
+Frontend,Unity 2022 (C#),"UI, Animation, Audio Capture, Network Requests"
+Backend,Python 3.10 + Flask,"API Server, Logic Handling"
+STT,OpenAI Whisper,Converting user speech to text
+TTS,Piper (Local),"Generating low-latency, natural voice audio"
+Intelligence,OpenRouter / Local LLM,Brains behind the conversation
+
+#📂 Project Structure
+root/
+├── flask-server/            # The Brain
+│   ├── app.py               # Main API entry point
+│   ├── whisper_module.py    # Speech-to-Text logic
+│   ├── tts_module.py        # Piper TTS integration
+│   ├── ai_module.py         # Context & Persona management
+│   ├── piper/               # Local TTS binaries
+│   └── static/              # Generated audio cache
+│
+└── unity-client/            # The Body
+    ├── Assets/
+    │   ├── Scripts/         # NetworkManager, VoiceRecorder, LipSync
+    │   ├── Models/          # 3D Character (VRM/FBX)
+    │   └── Scenes/          # Main Desktop Overlay Scene
+#🚀 Getting Started
+Prerequisites
+   Python 3.10+
+   Unity 2022.3 (LTS) or higher
+   A microphone
+1. Setup Backend (Flask)
+cd flask-server
+pip install -r requirements.txt
+# Download Piper voice model and place in /piper folder
+python app.py
 
