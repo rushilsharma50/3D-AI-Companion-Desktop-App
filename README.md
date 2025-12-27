@@ -52,15 +52,6 @@ This project focuses on **presence over performance**: subtle animations, short 
 
 ## 🧠 Architecture Overview
 
-# AURA — Desktop AI Companion (Unity + Python)
-
-AURA is a lightweight **desktop AI companion** built with **Unity** and **Python**, designed to live on your desktop as a calm, expressive presence.  
-It combines voice interaction, AI-driven conversation, and a 3D animated character — without feeling intrusive or robotic.
-
-This project focuses on **presence over performance**: subtle animations, short natural replies, and human-like voice.
-
----
-
 ## ✨ Features
 
 - 🎙️ **Voice-to-Voice Conversation**
