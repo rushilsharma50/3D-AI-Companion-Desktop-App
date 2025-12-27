@@ -50,50 +50,6 @@ This project focuses on **presence over performance**: subtle animations, short 
 
 ---
 
-## 🧠 Architecture Overview
-
-## ✨ Features
-
-- 🎙️ **Voice-to-Voice Conversation**
-  - Microphone input from Unity
-  - Speech-to-Text using Whisper
-  - AI-generated replies
-  - Natural-sounding Text-to-Speech using Piper (offline)
-
-- 🤖 **Persona-Based AI**
-  - Multiple personas (Friend, Assistant, Companion)
-  - Short, voice-optimized responses
-  - Designed for conversational flow, not long explanations
-
-- 🧍 **3D Desktop Companion**
-  - Unity-based 3D character
-  - Idle animations (standing, relaxed, sitting planned)
-  - Lip sync using blendshapes (vowel-based)
-  - Designed to sit on the desktop / taskbar (planned)
-
-- ⚡ **Decoupled Architecture**
-  - Unity handles UI, animation, audio playback
-  - Python (Flask) handles AI, STT, and TTS
-  - Keeps the Unity client responsive and lightweight
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend (Client)
-- **Unity 2022 LTS**
-- C#
-- Skinned Mesh Renderer (blendshape-based lip sync)
-- Desktop transparent window (overlay-style)
-
-### Backend (Server)
-- **Python 3.10+**
-- Flask (API server)
-- Whisper (Speech-to-Text)
-- Piper TTS (offline, natural voice)
-- OpenRouter / LLM API (for AI replies)
-
----
 
 ## 🧠 Architecture Overview
 [ Unity Client ]
