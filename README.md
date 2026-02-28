@@ -4,7 +4,7 @@ AURA (**Adaptive User Response Assistant**) is a lightweight desktop AI companio
 
 This project focuses on **presence over performance**: subtle animations, short natural replies, and human-like voice interaction.
 
-![AURA Desktop Overlay]([Images/Screenshot (1338).png])
+![AURA Desktop Overlay](Images/Screenshot (1338).png)
 > *AURA running as a non-intrusive desktop overlay alongside system tasks on an RTX 4060 system.*
 
 ---
@@ -37,7 +37,7 @@ This project focuses on **presence over performance**: subtle animations, short 
 
 ## 🧠 System Architecture
 
-![Emotion Controller and Logic]([Images/Screenshot (1330).png])
+![Emotion Controller and Logic](Images/Screenshot (1330).png)
 > *The Unity Inspector showing the Emotion Controller setup and real-time backend communication logs.*
 
 ---
@@ -51,7 +51,7 @@ This project focuses on **presence over performance**: subtle animations, short 
 * 🚧 Taskbar and window-edge sitting
 * 🚧 Idle animation switching (standing/sitting)
 
-![Character Preview]([Images/Screenshot (1333).png])
+![Character Preview](Images/Screenshot (1333).png)
 
 ---
 
