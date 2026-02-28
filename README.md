@@ -4,7 +4,7 @@ AURA (**Adaptive User Response Assistant**) is a lightweight desktop AI companio
 
 This project focuses on **presence over performance**: subtle animations, short natural replies, and human-like voice interaction.
 
-![AURA Desktop Overlay](https://github.com/user-attachments/assets/screenshot_1338)
+![AURA Desktop Overlay]([IMAGE_URL_FOR_SCREENSHOT_1338])
 > *AURA running as a non-intrusive desktop overlay alongside system tasks on an RTX 4060 system.*
 
 ---
@@ -37,13 +37,8 @@ This project focuses on **presence over performance**: subtle animations, short 
 
 ## 🧠 System Architecture
 
-![Emotion Controller and Logic](https://github.com/user-attachments/assets/screenshot_1330)
+![Emotion Controller and Logic]([IMAGE_URL_FOR_SCREENSHOT_1330])
 > *The Unity Inspector showing the Emotion Controller setup and real-time backend communication logs.*
-
-**Key logic flow:**
-1.  **Unity** records microphone input and sends audio to **Flask**.
-2.  **Flask** transcribes via **Whisper**, generates a reply via **LLM**, and converts to voice via **Piper**.
-3.  **Unity** receives the audio URL and text, plays the response, and triggers corresponding **Blendshape** animations.
 
 ---
 
@@ -56,26 +51,37 @@ This project focuses on **presence over performance**: subtle animations, short 
 * 🚧 Taskbar and window-edge sitting
 * 🚧 Idle animation switching (standing/sitting)
 
-![Character Preview](https://github.com/user-attachments/assets/screenshot_1333)
+![Character Preview]([IMAGE_URL_FOR_SCREENSHOT_1333])
 
 ---
 
-## ⚖️ Model Credits & License
+## 📜 Model License & Credits
 
-The 3D character used in this project is **Chisa (鸣潮_千咲)** created by **1010浣 / Guangzhou Kuluo Technology Co., Ltd**.
+The 3D character used in this project is **Chisa (鸣潮_千咲)** created by **1010浣 / 鸣潮**. 
 
-* **Usage**: This project is intended for **FAN ART** and experimental purposes only.
-* **Restrictions**: 
-    * No commercial use or money-related transactions.
-    * No redistribution of the model data.
-    * No usage involving R-18 content, politics, or religion.
-* **Copyright**: The final copyright belongs to **Guangzhou Kuluo Technology Co., Ltd**.
+According to the original `read me.txt` provided with the model:
+
+### ⚠️ Forbidden Actions
+- **Redistribution:** Redistribution of this model data is strictly prohibited.
+- **Commercial Use:** Any use involving money transactions or commercial gain is forbidden.
+- **Prohibited Content:** Use involving R-18 (pornography, blood, violence), politics, religion, or illegal activities is strictly prohibited.
+- **Harmful Use:** Must not be used to insult or show contempt toward other people, countries, or regions.
+
+### 🛠️ Editing & Redistribution
+- **Editing:** Allowed, provided the character is not changed to a different character.
+- **Part Transfer:** You may NOT transplant parts of this model onto other models.
+- **Finality:** Redistribution is prohibited regardless of whether the model is edited or not.
+
+### ⚖️ Disclaimer & Copyright
+- This file is intended for **FAN ART** purposes only and differs from the original game content.
+- The author/editor is not responsible for any damage caused by using this model.
+- **The final copyright of this model material belongs to Guangzhou Kuluo Technology Co., Ltd.**
 
 ---
 
 ## 📌 Author
 
-**Rushil Sharma** *B.Tech CSE Student @ Parul University* Unity Developer | AI Tools | Interactive Systems
+**Rushil Sharma** *Unity Developer | AI Tools | Interactive Systems*
 
 ---
 
