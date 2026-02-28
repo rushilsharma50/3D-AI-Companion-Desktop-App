@@ -1,154 +1,84 @@
 # AURA — Desktop AI Companion (Unity + Python)
 
-AURA is a lightweight **desktop AI companion** built with **Unity** and **Python**, designed to live on your desktop as a calm, expressive presence.  
-It combines voice interaction, AI-driven conversation, and a 3D animated character — without feeling intrusive or robotic.
+AURA (**Adaptive User Response Assistant**) is a lightweight desktop AI companion built with **Unity** and **Python**. It is designed to live on your desktop as a calm, expressive presence, combining voice interaction, AI-driven conversation, and a 3D animated character.
 
-This project focuses on **presence over performance**: subtle animations, short natural replies, and human-like voice.
+This project focuses on **presence over performance**: subtle animations, short natural replies, and human-like voice interaction.
+
+![AURA Desktop Overlay](https://github.com/user-attachments/assets/screenshot_1338)
+> *AURA running as a non-intrusive desktop overlay alongside system tasks on an RTX 4060 system.*
 
 ---
 
 ## ✨ Features
 
-- 🎙️ **Voice-to-Voice Conversation**
-  - Microphone input from Unity
-  - Speech-to-Text using Whisper
-  - AI-generated replies
-  - Natural-sounding Text-to-Speech using Piper (offline)
-
-- 🤖 **Persona-Based AI**
-  - Multiple personas (Friend, Assistant, Companion)
-  - Short, voice-optimized responses
-  - Designed for conversational flow, not long explanations
-
-- 🧍 **3D Desktop Companion**
-  - Unity-based 3D character
-  - Idle animations (standing, relaxed, sitting planned)
-  - Lip sync using blendshapes (vowel-based)
-  - Designed to sit on the desktop / taskbar (planned)
-
-- ⚡ **Decoupled Architecture**
-  - Unity handles UI, animation, audio playback
-  - Python (Flask) handles AI, STT, and TTS
-  - Keeps the Unity client responsive and lightweight
+* 🎙️ **Voice-to-Voice Conversation**: Real-time microphone input from Unity with natural-sounding TTS via Piper.
+* 🤖 **Persona-Based AI**: Multiple personas (Friend, Assistant, Companion) with short, voice-optimized responses.
+* 🧍 **3D Desktop Companion**: Unity-based character with automated head tracking and idle animations.
+* 🎭 **Emotion Controller**: Integrated blendshapes for Neutral, Happy, Sad, Angry, and Surprised states.
+* 👄 **Lip Sync**: Skinned Mesh Renderer utilizing vowel-based blendshapes for natural speech movement.
+* ⚡ **Decoupled Architecture**: Python Flask backend handles heavy AI processing to keep the Unity client lightweight.
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Frontend (Client)
-- **Unity 2022 LTS**
-- C#
-- Skinned Mesh Renderer (blendshape-based lip sync)
-- Desktop transparent window (overlay-style)
+* **Unity 2022.3.62f1**
+* **C#**
+* **Desktop Transparent Window**: Overlay-style integration.
 
 ### Backend (Server)
-- **Python 3.10+**
-- Flask (API server)
-- Whisper (Speech-to-Text)
-- Piper TTS (offline, natural voice)
-- OpenRouter / LLM API (for AI replies)
+* **Python 3.10+ (Flask)**: Serving as the API bridge.
+* **Whisper**: For local Speech-to-Text transcription.
+* **Piper TTS**: High-quality, offline text-to-speech.
+* **OpenRouter/LLM**: For generating emotionally intelligent replies.
 
 ---
 
+## 🧠 System Architecture
 
-## 🧠 Architecture Overview
-[ Unity Client ]
-├─ Records microphone input
-├─ Sends audio + persona to Flask
-├─ Plays returned voice
-├─ Animates character (idle + lip sync)
+![Emotion Controller and Logic](https://github.com/user-attachments/assets/screenshot_1330)
+> *The Unity Inspector showing the Emotion Controller setup and real-time backend communication logs.*
 
-[ Flask Server ]
-├─ Whisper → transcribe audio
-├─ LLM → generate short reply
-├─ Piper → generate voice
-└─ Returns text + audio URL
-
-
-**Key idea:**  
-AI logic is fully decoupled from the Unity runtime, preventing frame drops or UI freezing.
+**Key logic flow:**
+1.  **Unity** records microphone input and sends audio to **Flask**.
+2.  **Flask** transcribes via **Whisper**, generates a reply via **LLM**, and converts to voice via **Piper**.
+3.  **Unity** receives the audio URL and text, plays the response, and triggers corresponding **Blendshape** animations.
 
 ---
 
-## 📂 Project Structure
+## 🚀 Project Status
 
-flask-server/
-│
-├─ app.py # Flask API entry point
-├─ whisper_module.py # Speech-to-text
-├─ ai_module.py # Persona logic + reply filtering
-├─ actions.py # LLM API calls
-├─ tts_module.py # Piper TTS integration
-├─ uploads/ # Incoming audio
-├─ static/ # Generated voice output
-└─ piper/ # Piper binary + voices
+* ✅ Voice input → AI → Voice output loop
+* ✅ Offline Natural Voice (Piper)
+* ✅ Emotion-aware facial expressions
+* ✅ Unity audio playback & JSON parsing
+* 🚧 Taskbar and window-edge sitting
+* 🚧 Idle animation switching (standing/sitting)
 
-
-Unity project:
-Assets/
-├─ Scripts/
-│ ├─ Voice/
-│ ├─ Animation/
-│ └─ Managers/
-├─ Models/
-├─ Materials/
-└─ Scenes/
-
+![Character Preview](https://github.com/user-attachments/assets/screenshot_1333)
 
 ---
 
-## 🚀 Current Status
+## ⚖️ Model Credits & License
 
-✅ Voice input → AI → voice output working  
-✅ Female natural voice (Piper)  
-✅ Short, voice-optimized AI replies  
-✅ Unity audio playback  
-🚧 Idle animations (in progress)  
-🚧 Lip sync refinement  
-🚧 Desktop sitting / taskbar integration  
+The 3D character used in this project is **Chisa (鸣潮_千咲)** created by **1010浣 / Guangzhou Kuluo Technology Co., Ltd**.
 
----
-
-## 🎯 Design Philosophy
-
-- Less UI, more presence
-- Short replies > long explanations
-- Calm motion over flashy animation
-- Feels like someone *there*, not an app demanding attention
-
----
-
-## 🧪 Future Plans
-
-- Idle animation switching (standing / sitting)
-- Taskbar & window-edge sitting
-- Emotion-aware facial expressions
-- Lightweight memory per persona
-- Optional offline LLM support
-
----
-
-## ⚠️ Disclaimer
-
-This project is experimental and built for learning, exploration, and personal use.  
-It is **not** intended to replace professional mental health support.
+* **Usage**: This project is intended for **FAN ART** and experimental purposes only.
+* **Restrictions**: 
+    * No commercial use or money-related transactions.
+    * No redistribution of the model data.
+    * No usage involving R-18 content, politics, or religion.
+* **Copyright**: The final copyright belongs to **Guangzhou Kuluo Technology Co., Ltd**.
 
 ---
 
 ## 📌 Author
 
-**Rushil Sharma**  
-Unity Developer | AI Tools | Interactive Systems  
+**Rushil Sharma** *B.Tech CSE Student @ Parul University* Unity Developer | AI Tools | Interactive Systems
 
 ---
 
 ## ⭐ Why This Project Exists
 
-This project started as an exploration of:
-- AI + real-time 3D interaction
-- Desktop companions that feel human, not gimmicky
-- Building meaningful tools through hands-on engineering
-
----
-
-If you find this interesting, feel free to explore, fork, or build on top of it.
+This project is an exploration of AI-driven real-time 3D interaction, aiming to build desktop companions that feel like a genuine presence rather than just a robotic utility.
